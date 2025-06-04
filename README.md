@@ -1,7 +1,7 @@
 # GSplatLoc: Grounding Keypoint Descriptors into 3D Gaussian Splatting for Improved Visual Localization
 [[Paper]](https://arxiv.org/abs/2409.16502) [[Project Page]](https://gsplatloc.github.io/) [[Video]](https://www.youtube.com/watch?v=3UKQQPLlqqg)
 
-**Authors:** Gennady Sidorov, Malik Mohrat, Ksenia Lebedeva, Ruslan Rakhimov, Sergey Kolyubin
+**Authors:** Gennady Sidorov, Malik Mohrat, Denis Gridusov, Ruslan Rakhimov, Sergey Kolyubin
 
 ![SplatLoc](./assets/pipeline.png)
 
