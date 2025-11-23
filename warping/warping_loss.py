@@ -45,7 +45,11 @@ def compute_warping_loss(vr, qr, quat_opt, t_opt, pose, K, depth):
     warp = pose @ from_cam_tensor_to_w2c(torch.cat([quat_opt, t_opt], dim=0)).inverse()
     
     warped_image = differentiable_warp(vr.unsqueeze(0), depth.unsqueeze(0), warp.unsqueeze(0), K.unsqueeze(0))
-    loss = F.mse_loss(warped_image, qr.unsqueeze(0))
+    target_qr = qr.unsqueeze(0)
+    if target_qr.device != warped_image.device:
+        target_qr = target_qr.to(warped_image.device)
+        
+    loss = F.mse_loss(warped_image, target_qr)
 
     return loss
 
